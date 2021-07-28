@@ -1,0 +1,37 @@
+.addNew {
+  margin-top: 50px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  height: 45px;
+  border-left: white;
+}
+.addSym {
+  height: 45px;
+  border-right: white;
+  background-color: white;
+  color: black;
+  border-color: rgb(214, 214, 214) !important;
+}
+.newForm {
+  margin-right: auto;
+  margin-left: auto;
+}
+.formLayout {
+  background: white;
+}
+.addNew:focus {
+  outline: none !important;
+  border-color: rgb(214, 214, 214) !important;
+  box-shadow: none;
+}
+.addNew:hover {
+  border-color: rgb(214, 214, 214) !important;
+}
+.addSym:focus,
+.addSym:hover {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: rgb(214, 214, 214);
+}

@@ -1,0 +1,112 @@
+.ddform {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 600px;
+}
+.switch {
+  width: 55px;
+  margin-right: 115px;
+}
+.notDiv {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+.div2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonRed {
+  background-color: #ff704d;
+  size: 25px;
+  border: 1px solid red;
+  color: #ff704d;
+  margin-right: 15px;
+}
+.buttonRed:hover,
+.buttonRed:focus {
+  background-color: #ff704d;
+  color: #ff704d;
+  border: 1px solid red;
+}
+.buttonYellow {
+  background-color: #ffff99;
+  size: 25px;
+  border: 1px solid yellow;
+  color: #ffff99;
+  margin-right: 15px;
+}
+.buttonYellow:hover,
+.buttonYellow:focus {
+  background-color: #ffff99;
+  color: #ffff99;
+  border: 1px solid yellow;
+}
+.buttonGreen {
+  background-color: lightgreen;
+  size: 25px;
+  border: 1px solid green;
+  color: lightgreen;
+  margin-right: 15px;
+}
+.buttonGreen:hover,
+.buttonGreen:focus {
+  background-color: lightgreen;
+  color: lightgreen;
+  border: 1px solid green;
+}
+.buttonBlue {
+  background-color: #b3d9ff;
+  size: 25px;
+  border: 1px solid blue;
+  color: #b3d9ff;
+  margin-right: 15px;
+}
+.buttonBlue:hover,
+.buttonBlue:focus {
+  background-color: #b3d9ff;
+  color: #b3d9ff;
+  border: 1px solid blue;
+}
+.buttonPink {
+  background-color: pink;
+  size: 25px;
+  border: 1px solid rebeccapurple;
+  color: pink;
+  margin-right: 15px;
+}
+.buttonPink:hover,
+.buttonPink:focus {
+  background-color: Pink;
+  color: Pink;
+  border: 1px solid rebeccapurple;
+}
+.buttonWhite {
+  background-color: white;
+  color: white;
+  border: 1px solid pink;
+  size: 25px;
+  margin-right: 15px;
+}
+.buttonWhite:hover,
+.buttonWhite:focus {
+  background-color: white;
+  color: white;
+  border: 1px solid pink;
+}
+.div1 {
+  display: flex;
+  margin-bottom: 20px;
+}
+.delButton {
+  background-color: rgb(0, 0, 0);
+  float: right;
+  border-radius: 20px;
+}
+.delButton:hover,
+.delButton:focus {
+  background: black !important;
+  box-shadow: none !important;
+}

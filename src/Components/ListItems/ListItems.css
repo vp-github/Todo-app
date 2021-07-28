@@ -1,0 +1,42 @@
+.tasks {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 645px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(214, 214, 214);
+  display: flex;
+  background: rgb(255, 255, 255);
+}
+.listClass {
+  background: white;
+}
+.list {
+  position: relative;
+  margin-top: 20px;
+}
+.span2 {
+  cursor: pointer;
+  margin-bottom: auto;
+  margin-top: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.checkbox {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.editclass {
+  background: rgba(89, 89, 90, 0);
+  height: 45px;
+  font-size: 18px;
+  border: none;
+}
+.editclass:focus {
+    outline:none !important;
+    border-color:rgb(214, 214, 214)!important;
+    box-shadow: none; 
+  }
