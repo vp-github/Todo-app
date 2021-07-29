@@ -104,6 +104,7 @@
   background-color: rgb(0, 0, 0);
   float: right;
   border-radius: 20px;
+  margin-left: 15px;
 }
 .delButton:hover,
 .delButton:focus {

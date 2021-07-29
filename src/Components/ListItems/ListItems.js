@@ -1,16 +1,57 @@
 import React from "react";
 import "./ListItems.css";
-import { Input, Form, Checkbox, Popover } from "antd";
-import { CaretDownFilled } from "@ant-design/icons";
+import { Input, Form, Checkbox, Popover, Tooltip, Collapse } from "antd";
+import {
+  CaretDownFilled,
+  ExclamationCircleFilled,
+  CaretUpFilled,
+} from "@ant-design/icons";
 import Dropdown from "../Dropdown/Dropdown";
 class ListItems extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.checkedStatus = this.checkedStatus.bind(this);
+    this.clickedStatus = this.clickedStatus.bind(this);
+    this.editItem = this.editItem.bind(this);
+  }
+
+  clickedStatus(id) {
+    const val = this.props.item;
+    val.map((i) => {
+      if (i.id === id) {
+        i.clicked = !i.clicked;
+      }
+    });
+    this.props.updateState(val);
+  }
+  editItem(text, id) {
+    const inp = this.state.todoItem;
+    inp.map((item) => {
+      if (item.id === id) {
+        item.text = text;
+      }
+    });
+    this.props.updateState(inp);
+  }
+
+  checkedStatus(id) {
+    const val = this.props.item;
+    val.map((i) => {
+      if (i.id === id) {
+        i.checked = !i.checked;
+      }
+    });
+    this.props.updateState(val);
+  }
+
   getDropdown(item) {
     return (
       <Dropdown
+        todoList={this.props.item}
         item={item}
+        updateState={this.props.updateState}
         delete={this.props.deleteItem}
-        edit={this.props.editItem}
-        priorityChange={this.props.priorityChange}
         colorChange={this.props.colorChange}
         dateChange={this.props.dateChange}
         notesUpdate={this.props.notesUpdate}
@@ -27,17 +68,24 @@ class ListItems extends React.Component {
             <Checkbox
               className="checkbox"
               onChange={() => {
-                this.props.checkedStatus(item.id);
+                this.checkedStatus(item.id);
               }}
             ></Checkbox>
+            <Tooltip placement="bottom" title={item.notes}>
+              <Input
+                type="text"
+                value={item.text}
+                className="editclass"
+                onChange={(e) => this.editItem(e.target.value, item.id)}
+                style={{
+                  textDecoration: item.checked ? "line-through" : "none",
+                }}
+              />
+            </Tooltip>
+            {item.priority ? (
+              <ExclamationCircleFilled className="star" />
+            ) : null}
 
-            <Input
-              type="text"
-              value={item.text}
-              className="editclass"
-              onChange={(e) => this.props.editItem(e.target.value, item.id)}
-              style={{ textDecoration: item.checked ? "line-through" : "none" }}
-            />
             <Popover
               className="span2"
               trigger="click"
@@ -45,7 +93,21 @@ class ListItems extends React.Component {
               title="Edit Task"
               placement="bottomRight"
             >
-              <CaretDownFilled className="icon" style={{ fontSize: "25px" }} />
+              {item.clicked ? (
+                <CaretUpFilled
+                  className="iconChange"
+                  onClick={() => {
+                    this.clickedStatus(item.id);
+                  }}
+                />
+              ) : (
+                <CaretDownFilled
+                  className="iconChange"
+                  onClick={() => {
+                    this.clickedStatus(item.id);
+                  }}
+                />
+              )}
             </Popover>
           </Form>
         </div>

@@ -16,6 +16,7 @@ class NewTask extends React.Component {
         checked: false,
         date: moment(),
         notes: "",
+        clicked: false,
       },
     };
     this.changeHandler = this.changeHandler.bind(this);
@@ -32,9 +33,7 @@ class NewTask extends React.Component {
   }
 
   submitHandler() {
-    const {
-      currentValue,
-    } = this.state;
+    const { currentValue } = this.state;
     const newItemValues = {
       ...this.state.currentValue,
       id: Date.now(),
@@ -50,7 +49,7 @@ class NewTask extends React.Component {
         },
       }));
     } else {
-      alert("Cannot Be Empty");
+      alert("Task Cannot Be Empty!");
     }
   }
 

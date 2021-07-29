@@ -19,7 +19,7 @@
   margin-left: auto;
 }
 .formLayout {
-  background: white;
+  background: rgb(242, 248, 242);
 }
 .addNew:focus {
   outline: none !important;

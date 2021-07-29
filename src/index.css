@@ -10,6 +10,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-    background-image:linear-gradient(115deg,rgba(58, 158, 100, 0.8),rgba(136, 136, 206, 0.7)),url("https://9to5mac.com/wp-content/uploads/sites/6/2019/03/Untitled.png?w=1500");
-  background-size: cover;
 }

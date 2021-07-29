@@ -15,16 +15,10 @@ class TodoApp extends React.Component {
 
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
-    this.editItem = this.editItem.bind(this);
-    this.priorityChange = this.priorityChange.bind(this);
-    this.colorChange = this.colorChange.bind(this);
-    this.dateChange = this.dateChange.bind(this);
-    this.notesUpdate = this.notesUpdate.bind(this);
-    this.checkedStatus = this.checkedStatus.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
 
   addItem(newTodoItem) {
-    
     this.setState((prevState) => ({
       todoItem: [...prevState.todoItem, newTodoItem],
     }));
@@ -37,75 +31,12 @@ class TodoApp extends React.Component {
     });
   }
 
-  editItem(text, id) {
-    const inp = this.state.todoItem;
-    inp.map((item) => {
-      if (item.id === id) {
-        item.text = text;
-      }
-    });
+  updateState(updated) {
     this.setState({
-      todoItem: inp,
+      todoItem: updated,
     });
   }
 
-  priorityChange(id) {
-    const val = this.state.todoItem;
-    val.map((i) => {
-      if (i.id === id) {
-        i.priority = !i.priority;
-      }
-    });
-    this.setState({
-      todoItem: val,
-    });
-  }
-
-  colorChange(color, id) {
-    const val = this.state.todoItem;
-    val.map((i) => {
-      if (i.id === id) {
-        i.color = color;
-      }
-    });
-    this.setState({
-      todoItem: val,
-    });
-  }
-
-  dateChange(value, id) {
-    const val = this.state.todoItem;
-    val.map((i) => {
-      if (i.id === id) {
-        i.date = value;
-      }
-    });
-    this.setState({
-      todoItem: val,
-    });
-  }
-  notesUpdate(event, id) {
-    const val = this.state.todoItem;
-    val.map((i) => {
-      if (i.id === id) {
-        i.notes = event;
-      }
-    });
-    this.setState({
-      todoItem: val,
-    });
-  }
-  checkedStatus(id) {
-    const val = this.state.todoItem;
-    val.map((i) => {
-      if (i.id === id) {
-        i.checked = !i.checked;
-      }
-    });
-    this.setState({
-      todoItem: val,
-    });
-  }
   render() {
     return (
       <Layout className="mainLayout">
@@ -119,11 +50,7 @@ class TodoApp extends React.Component {
           item={this.state.todoItem}
           deleteItem={this.deleteItem}
           editItem={this.editItem}
-          priorityChange={this.priorityChange}
-          colorChange={this.colorChange}
-          dateChange={this.dateChange}
-          notesUpdate={this.notesUpdate}
-          checkedStatus={this.checkedStatus}
+          updateState={this.updateState}
         />
       </Layout>
     );
