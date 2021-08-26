@@ -1,11 +1,7 @@
 import React from "react";
 import "./ListItems.css";
-import { Input, Form, Checkbox, Popover, Tooltip, Collapse } from "antd";
-import {
-  CaretDownFilled,
-  ExclamationCircleFilled,
-  CaretUpFilled,
-} from "@ant-design/icons";
+import { Input, Form, Checkbox, Popover, Tooltip, Select } from "antd";
+import { CaretDownFilled, CaretUpFilled, FireFilled } from "@ant-design/icons";
 import Dropdown from "../Dropdown/Dropdown";
 class ListItems extends React.Component {
   constructor(props) {
@@ -71,7 +67,7 @@ class ListItems extends React.Component {
                 this.checkedStatus(item.id);
               }}
             ></Checkbox>
-            <Tooltip placement="bottom" title={item.notes}>
+            <Tooltip placement="b" title={item.notes}>
               <Input
                 type="text"
                 value={item.text}
@@ -82,9 +78,7 @@ class ListItems extends React.Component {
                 }}
               />
             </Tooltip>
-            {item.priority ? (
-              <ExclamationCircleFilled className="star" />
-            ) : null}
+            {item.priority ? <FireFilled className="star" /> : null}
 
             <Popover
               className="span2"
@@ -92,21 +86,14 @@ class ListItems extends React.Component {
               content={this.getDropdown(item)}
               title="Edit Task"
               placement="bottomRight"
+              onVisibleChange={() => {
+                this.clickedStatus(item.id);
+              }}
             >
               {item.clicked ? (
-                <CaretUpFilled
-                  className="iconChange"
-                  onClick={() => {
-                    this.clickedStatus(item.id);
-                  }}
-                />
+                <CaretUpFilled className="iconChange" />
               ) : (
-                <CaretDownFilled
-                  className="iconChange"
-                  onClick={() => {
-                    this.clickedStatus(item.id);
-                  }}
-                />
+                <CaretDownFilled className="iconChange" />
               )}
             </Popover>
           </Form>

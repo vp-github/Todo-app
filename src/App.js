@@ -5,7 +5,6 @@ import NewTask from "./Components/NewTask/NewTask.js";
 import ListItems from "./Components/ListItems/ListItems.js";
 
 const { Header } = Layout;
-
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
@@ -36,7 +35,7 @@ class TodoApp extends React.Component {
       todoItem: updated,
     });
   }
-
+ 
   render() {
     return (
       <Layout className="mainLayout">

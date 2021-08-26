@@ -1,6 +1,6 @@
 import React from "react";
 import "./NewTask.css";
-import { PlusOutlined } from "@ant-design/icons";
+import { PlusOutlined, UserAddOutlined } from "@ant-design/icons";
 import { Form, Button, Input, Layout } from "antd";
 import moment from "moment";
 
@@ -52,7 +52,7 @@ class NewTask extends React.Component {
       alert("Task Cannot Be Empty!");
     }
   }
-
+  
   render() {
     return (
       <Layout className="formLayout">
