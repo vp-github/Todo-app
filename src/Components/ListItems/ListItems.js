@@ -3,6 +3,7 @@ import "./ListItems.css";
 import { Input, Form, Checkbox, Popover, Tooltip, Select } from "antd";
 import { CaretDownFilled, CaretUpFilled, FireFilled } from "@ant-design/icons";
 import Dropdown from "../Dropdown/Dropdown";
+import Item from "antd/lib/list/Item";
 class ListItems extends React.Component {
   constructor(props) {
     super(props);
@@ -22,7 +23,7 @@ class ListItems extends React.Component {
     this.props.updateState(val);
   }
   editItem(text, id) {
-    const inp = this.state.todoItem;
+    const inp = this.props.item;
     inp.map((item) => {
       if (item.id === id) {
         item.text = text;
@@ -63,11 +64,12 @@ class ListItems extends React.Component {
           <Form className="tasks" style={{ backgroundColor: item.color }}>
             <Checkbox
               className="checkbox"
+              checked={item.checked}
               onChange={() => {
                 this.checkedStatus(item.id);
               }}
             ></Checkbox>
-            <Tooltip placement="b" title={item.notes}>
+            <Tooltip placement="bottom" title={item.notes}>
               <Input
                 type="text"
                 value={item.text}

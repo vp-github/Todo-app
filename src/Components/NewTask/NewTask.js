@@ -14,7 +14,7 @@ class NewTask extends React.Component {
         color: "white",
         priority: false,
         checked: false,
-        date: moment(),
+        date: moment().toString(),
         notes: "",
         clicked: false,
       },
@@ -52,7 +52,7 @@ class NewTask extends React.Component {
       alert("Task Cannot Be Empty!");
     }
   }
-  
+
   render() {
     return (
       <Layout className="formLayout">

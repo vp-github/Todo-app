@@ -35,7 +35,20 @@ class TodoApp extends React.Component {
       todoItem: updated,
     });
   }
- 
+  componentDidUpdate() {
+    localStorage.setItem("dataHouse", JSON.stringify(this.state.todoItem));
+  }
+  componentDidMount() {
+    const dataStore = JSON.parse(localStorage.getItem("dataHouse"));
+    if (dataStore != null) {
+      this.setState({
+        todoItem: dataStore.map((item) => ({
+          ...item,
+          clicked: false,
+        })),
+      });
+    }
+  }
   render() {
     return (
       <Layout className="mainLayout">

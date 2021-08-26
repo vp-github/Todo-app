@@ -70,9 +70,9 @@ class Dropdown extends React.Component {
           <div className="dateDiv">
             <p className="p2"> Due Date</p>
             <DatePicker
-              value={this.props.item.date}
+              value={moment(this.props.item.date)}
               onChange={(value) => {
-                this.dateChange(value, this.props.item.id);
+                this.dateChange(value.toString(), this.props.item.id);
               }}
             />
           </div>
