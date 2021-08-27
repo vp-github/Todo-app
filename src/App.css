@@ -11,3 +11,12 @@
 .mainLayout {
   background: white;
 }
+@media screen and (max-width: 580px) {
+  .mainHeading {
+    height: 150px;
+  }
+  .headingHeader {
+    height: 150px;
+  }
+  
+}

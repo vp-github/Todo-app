@@ -111,3 +111,38 @@
   background: black !important;
   box-shadow: none !important;
 }
+.badge {
+  margin-left: 25px;
+  background-color: rgb(216, 69, 69);
+  color: white;
+  padding: 5px;
+  border-radius: 30px;
+  animation: blink 2s linear infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 850px) {
+  .ddform {
+    width: 250px;
+    flex-direction: column;
+  }
+  .div1 {
+    flex-direction: column;
+  }
+  .dateDiv {
+    margin-top: 20px;
+  }
+  .buttonPink {
+    margin-top: 10px;
+  }
+  .delButton {
+    margin-top: 50px;
+  }
+}

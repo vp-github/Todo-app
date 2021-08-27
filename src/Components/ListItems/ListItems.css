@@ -11,7 +11,7 @@
 }
 .listClass {
   background: rgb(242, 248, 242);
-  height: 150vh;
+  height: 100vh;
 }
 .list {
   position: relative;
@@ -57,4 +57,9 @@
 }
 .iconChange:active {
   transform: rotate(180deg);
+}
+@media screen and (max-width: 850px) {
+  .tasks {
+    width: 300px;
+  }
 }

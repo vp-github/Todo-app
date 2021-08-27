@@ -1,6 +1,6 @@
 import React from "react";
 import "./Dropdown.css";
-import { Form, DatePicker, Button, Switch, Input, Modal } from "antd";
+import { Form, DatePicker, Button, Switch, Input, Badge } from "antd";
 import moment from "moment";
 class Dropdown extends React.Component {
   constructor(props) {
@@ -71,10 +71,18 @@ class Dropdown extends React.Component {
             <p className="p2"> Due Date</p>
             <DatePicker
               value={moment(this.props.item.date)}
+              allowClear={false}
               onChange={(value) => {
                 this.dateChange(value.toString(), this.props.item.id);
               }}
             />
+
+            {moment(this.props.item.date).format("DD/MM/YYYY") ===
+            moment().format("DD/MM/YYYY") ? (
+              <Badge className="badge">
+                <b>Today</b>
+              </Badge>
+            ) : null}
           </div>
         </div>
 
