@@ -5,7 +5,6 @@
   margin-right: auto;
   text-align: left;
   height: 45px;
-  border-left: white;
 }
 .addSym {
   height: 45px;
@@ -13,6 +12,8 @@
   background-color: white;
   color: black;
   border-color: rgb(214, 214, 214) !important;
+  border-right: white !important;
+  box-shadow: none !important;
 }
 .newForm {
   margin-right: auto;
